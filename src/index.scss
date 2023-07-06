@@ -1,0 +1,49 @@
+@use './assets/scss/mixin' as *;
+@forward './assets/scss/reset';
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  line-height: 1.5;
+  color: rgb(255 255 255 / 0.87);
+  background-color: hsl(0 0% 14%);
+  color-scheme: light dark;
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+}
+
+a {
+  display: inline-block;
+  font-weight: 500;
+  color: hsl(237 100% 70%);
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: hsl(237 86% 64%);
+}
+
+body {
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: clamp(rem(32px), 4vw, rem(48px));
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: hsl(208 37% 20%);
+    background-color: hsl(0 0% 100%);
+  }
+
+  a:hover {
+    color: hsl(237 100% 73%);
+  }
+}
