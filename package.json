@@ -23,17 +23,13 @@
     "lint:eslint": "eslint . --ext .js,.jsx",
     "fix:eslint": "eslint --fix  . --ext .js,.jsx",
     "lint:stylelint": "stylelint ./src/**/*.{css,scss,jsx}",
-    "fix:stylelint": "stylelint --fix  ./src/**/*.{css,scss,jsx}",
-    "changeset": "changeset",
-    "release": "changeset publish"
+    "fix:stylelint": "stylelint --fix  ./src/**/*.{css,scss,jsx}"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.4.8",
-    "@changesets/cli": "^2.26.2",
     "@frontendfixer/eslint-config-react": "^1.0.4",
     "@namics/stylelint-bem": "^8.1.0",
     "@types/react": "^18.0.28",
