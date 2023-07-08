@@ -1,18 +1,9 @@
 {
-  "name": "@frontendfixer/vite-react-boilerplate",
+  "name": "@frontendfixer/multi-step-form",
   "version": "0.0.0",
-  "description": "React Boilerplate using Vite , Prettier, Eslint, Stylelint, and SASS ",
-  "keywords": [
-    "react",
-    "vite",
-    "react template",
-    "vite react template",
-    "javascript",
-    "typescript",
-    "config"
-  ],
+  "description": "Frontend Mentor | Multi-step form",
   "main": "index.html",
-  "repository": "git@github.com:frontendfixer/vite_react_boilerplate.git",
+  "repository": "git@github.com:frontendfixer/multi-step-form.git",
   "author": "Lakshmikanta <frontendfixer@gmail.com>",
   "license": "MIT",
   "type": "module",
@@ -27,8 +18,10 @@
     "fix:stylelint": "stylelint --fix  ./src/**/*.{css,scss,jsx}"
   },
   "dependencies": {
+    "@reduxjs/toolkit": "^1.9.5",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.14.1"
   },
   "devDependencies": {
     "@frontendfixer/eslint-config-react": "^1.0.4",
