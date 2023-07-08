@@ -1,0 +1,34 @@
+@use '../../assets/scss/mixin' as *;
+
+.button {
+  cursor: pointer;
+  appearance: none;
+  border: none;
+  outline: none;
+  padding-block: 0.875rem;
+  padding-inline: 1.5rem;
+  font: inherit;
+  background-color: var(--marine);
+  color: var(--white);
+  font-weight: var(--fw-700);
+  display: flex;
+  justify-content: center;
+  border-radius: 0.5rem;
+  transition: filter 250ms;
+  @include hover {
+    filter: opacity(0.8);
+  }
+
+  &.inverted {
+    background-color: transparent;
+    color: var(--marine);
+    opacity: 0.5;
+    transition: opacity 250ms;
+    @include hover {
+      opacity: 1;
+    }
+  }
+  &.confirm {
+    background-color: var(--purplish);
+  }
+}
