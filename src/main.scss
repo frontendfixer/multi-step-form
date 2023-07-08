@@ -1,0 +1,48 @@
+@use './assets/scss/mixin' as *;
+@forward './assets/scss/reset';
+
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+:root {
+  --ff-primary: 'Ubuntu', sans-serif;
+  --fs-base: 16px;
+  --fs-400: 1rem;
+  --fs-500: 1.5rem;
+  --fs-700: clamp(2rem, 4vw, 3rem);
+  --fw-400: 400;
+  --fw-500: 500;
+  --fw-700: 700;
+
+  --marine: hsl(213, 96%, 18%);
+  --purplish: hsl(243, 100%, 62%);
+  --pastel: hsl(228, 100%, 84%);
+  --light_blue: hsl(206, 94%, 87%);
+  --strawberry: hsl(354, 84%, 57%);
+
+  --cool_gray: hsl(231, 11%, 63%);
+  --light_gray: hsl(229, 24%, 87%);
+  --magnolia: hsl(217, 100%, 97%);
+  --alabaster: hsl(231, 100%, 99%);
+  --white: hsl(0, 0%, 100%);
+
+  --clr-primary-bg: var(--magnolia);
+  --clr-primary-fg: var(--marine);
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  place-items: center;
+  font-family: var(--ff-primary);
+  font-size: var(--fs-base);
+  line-height: 1.5;
+  background-color: var(--clr-primary-bg);
+  color: var(--clr-primary-fg);
+
+  font-synthesis: none;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-size-adjust: 100%;
+  color-scheme: light dark;
+}
