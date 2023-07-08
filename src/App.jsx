@@ -1,25 +1,25 @@
 import './App.scss';
 
-import { ReactComponent as ReactLogo } from './assets/react.svg';
-import { ReactComponent as ViteLogo } from './assets/vite.svg';
+import { Route, Routes } from 'react-router-dom';
+
+import AddOn from './components/add-ons/add-ons.component';
+import FormLayout from './components/form-layout/form-layout.component';
+import OrderSummary from './components/order-summary/order-summary.component';
+import PersonalInfo from './components/personal-info/personal-info.component';
+import ThanksCard from './components/thanks/thanks.component';
+import UserPlans from './components/user-plans/user-plans.component';
 
 function App() {
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer noopener">
-          <ViteLogo className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer noopener">
-          <ReactLogo className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite React Boilerplate</h1>
-      <span>
-        ⚙️ Created with [ <code>🔱 ESLint</code> | <code>🎀 Prettier</code> |{' '}
-        <code>🎨 SCSS</code> | <code>🔮 StyleLint</code> ]
-      </span>
-    </>
+    <Routes>
+      <Route path="/" element={<FormLayout />}>
+        <Route index element={<PersonalInfo />} />
+        <Route path="/user-plans" element={<UserPlans />} />
+        <Route path="/add-ons" element={<AddOn />} />
+        <Route path="/order-summary" element={<OrderSummary />} />
+        <Route path="/thank-you-for-your-order" element={<ThanksCard />} />
+      </Route>
+    </Routes>
   );
 }
 
