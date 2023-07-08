@@ -1,0 +1,28 @@
+.personal__details {
+  margin-block: 1.5rem;
+
+  label:not(:last-child) {
+    margin-block-end: 1.125rem;
+  }
+  label {
+    font-weight: var(--fw-500);
+    display: block;
+
+    input {
+      border: none;
+      outline: none;
+      margin-block-start: 0.325rem;
+      display: block;
+
+      width: 100%;
+      padding-block: 0.75rem;
+      font: inherit;
+      padding-inline: 1rem;
+      border-radius: 0.5rem;
+      border: 1px solid var(--light_gray);
+      ::placeholder {
+        color: var(--light_gray);
+      }
+    }
+  }
+}
