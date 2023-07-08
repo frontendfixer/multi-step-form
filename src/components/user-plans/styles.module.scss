@@ -1,0 +1,97 @@
+@use '../../assets/scss/mixin' as *;
+
+.plans__details {
+  padding-block: 1.5rem;
+}
+
+.plan {
+  &__cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+  }
+  &__card {
+    cursor: pointer;
+    padding-inline: 0.875rem;
+    padding-block: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    background-color: transparent;
+    border-radius: 1rem;
+    border: 1px solid var(--light_gray);
+    @include hover {
+      border-color: var(--marine);
+    }
+    input {
+      position: absolute;
+      width: 0;
+      height: 0;
+      white-space: nowrap;
+    }
+    &:has(input[name='game-plan']:checked) {
+      background-color: var(--magnolia);
+    }
+
+    > span {
+      margin-block-end: 2rem;
+    }
+  }
+  &__price {
+    h3 {
+      font-size: 1.125rem;
+    }
+    span {
+      color: var(--cool_gray);
+    }
+  }
+  &__tenure {
+    margin-block-start: 1rem;
+    padding-block: 1rem;
+    background-color: var(--magnolia);
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 0.75rem;
+    span {
+      color: var(--cool_gray);
+      font-weight: var(--fw-700);
+      &[data-tenure='active'] {
+        color: var(--marine);
+      }
+    }
+  }
+}
+
+.toggle {
+  &__button {
+    width: 54px;
+    height: 27px;
+    background-color: var(--marine);
+    border-radius: 10vw;
+    position: relative;
+  }
+  &__ball {
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 50%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    transition: all 350ms ease-in-out;
+  }
+  &__checkbox {
+    position: absolute;
+    width: 0;
+    height: 0;
+    white-space: nowrap;
+    &:checked + .toggle__ball {
+      left: 75%;
+    }
+  }
+}
