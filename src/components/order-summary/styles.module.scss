@@ -1,0 +1,56 @@
+@use '../../assets/scss/mixin' as *;
+
+.summary {
+  --gutter-y: 1.5rem;
+  padding-block-start: 2rem;
+  &__schemes {
+    padding-inline: var(--gutter-y);
+    padding-block: var(--gutter-y);
+    background-color: var(--magnolia);
+    border-radius: 4px;
+  }
+  &__addOns {
+    padding-block-start: var(--gutter-y);
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter-y);
+  }
+  &__addOn {
+    display: flex;
+    justify-content: space-between;
+    color: var(--cool_gray);
+    &__price {
+      color: var(--marine);
+    }
+  }
+  &__total {
+    padding-inline: var(--gutter-y);
+    padding-block-start: var(--gutter-y);
+    color: var(--cool_gray);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__price {
+      font-size: 1.25rem;
+      color: var(--purplish);
+    }
+  }
+}
+.game__plan {
+  padding-block-end: var(--gutter-y);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--light_gray);
+  &__name {
+    h3 {
+      font-size: 1.125rem;
+    }
+    a {
+      color: var(--cool_gray);
+      @include hover {
+        color: var(--purplish);
+      }
+    }
+  }
+}
