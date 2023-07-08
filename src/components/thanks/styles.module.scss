@@ -1,0 +1,21 @@
+.container {
+  width: 80%;
+  margin-inline: auto;
+  height: 100%;
+  display: grid;
+  place-content: center;
+  gap: 2rem;
+}
+.thankYou {
+  &__icon {
+    margin-inline: auto;
+  }
+  &__message {
+    h2 {
+      font-size: var(--fs-700);
+    }
+    p {
+      color: var(--cool_gray);
+    }
+  }
+}
