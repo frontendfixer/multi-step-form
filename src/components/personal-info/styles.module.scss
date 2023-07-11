@@ -17,11 +17,13 @@
       width: 100%;
       padding-block: 0.75rem;
       font: inherit;
+      background-color: var(--alabaster);
+      color: var(--marine);
       padding-inline: 1rem;
       border-radius: 0.5rem;
       border: 1px solid var(--light_gray);
       ::placeholder {
-        color: var(--light_gray);
+        color: var(--marine);
       }
     }
   }
