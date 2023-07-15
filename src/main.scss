@@ -5,10 +5,8 @@
 
 :root {
   --ff-primary: 'Ubuntu', sans-serif;
-  --fs-base: 16px;
-  --fs-400: 1rem;
-  --fs-500: 1.5rem;
-  --fs-700: clamp(2rem, 4vw, 3rem);
+  --fs-base: 1rem;
+  --fs-700: clamp(1.75rem, 3.34vw, 3rem);
   --fw-400: 400;
   --fw-500: 500;
   --fw-700: 700;
@@ -27,12 +25,12 @@
 
   --clr-primary-bg: var(--magnolia);
   --clr-primary-fg: var(--marine);
+  --clr-highlight: var(--purplish);
+
+  --border-radius: 0.5rem;
 }
 
 body {
-  min-height: 100vh;
-  display: flex;
-  place-items: center;
   font-family: var(--ff-primary);
   font-size: var(--fs-base);
   line-height: 1.5;
