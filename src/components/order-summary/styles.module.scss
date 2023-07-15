@@ -1,38 +1,58 @@
 @use '../../assets/scss/mixin' as *;
 
 .summary {
-  --gutter-y: 1.5rem;
-  padding-block-start: 2rem;
-  &__schemes {
+  --gutter-y: 1rem;
+  margin-block: 1.5rem;
+  padding-block: var(--gutter-y);
+  padding-inline: var(--gutter-y);
+  background-color: var(--magnolia);
+  border-radius: 4px;
+  font-size: clamp(0.8125rem, 1.4vw, 1.125rem);
+
+  &__personalInfo {
     padding-inline: var(--gutter-y);
-    padding-block: var(--gutter-y);
-    background-color: var(--magnolia);
-    border-radius: 4px;
+    background-color: var(--alabaster);
+    padding-block: 0.5rem;
+    margin-block-end: 0.75rem;
+    h3 {
+      text-transform: uppercase;
+    }
+    p {
+      color: var(--cool_gray);
+    }
   }
   &__addOns {
     padding-block-start: var(--gutter-y);
     display: flex;
     flex-direction: column;
-    gap: var(--gutter-y);
+    gap: 0.75rem;
+    border-top: 2px solid var(--light_gray);
   }
   &__addOn {
     display: flex;
     justify-content: space-between;
     color: var(--cool_gray);
     &__price {
+      font-weight: var(--fw-500);
       color: var(--marine);
     }
   }
   &__total {
-    padding-inline: var(--gutter-y);
-    padding-block-start: var(--gutter-y);
+    padding-inline: 1rem;
     color: var(--cool_gray);
+    font-size: clamp(0.8125rem, 1.4vw, 1.125rem);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: rem(6px);
+    > p {
+      display: flex;
+      justify-content: space-between;
+    }
     &__price {
-      font-size: 1.25rem;
-      color: var(--purplish);
+      font-weight: var(--fw-bold);
+      strong {
+        color: var(--purplish);
+      }
     }
   }
 }
@@ -41,11 +61,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 2px solid var(--light_gray);
   &__name {
-    h3 {
-      font-size: 1.125rem;
-    }
     a {
       color: var(--cool_gray);
       @include hover {
