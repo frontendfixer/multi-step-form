@@ -9,6 +9,18 @@
     @include mq-min(medium) {
       grid-template-columns: repeat(3, minmax(8rem, 1fr));
     }
+    input[name='game-plan'] {
+      appearance: none;
+      pointer-events: none;
+      position: absolute;
+      width: 0;
+      height: 0;
+      white-space: nowrap;
+      &:checked + label {
+        border-color: var(--clr-highlight);
+        background-color: var(--magnolia);
+      }
+    }
   }
   &__card {
     cursor: pointer;
@@ -26,18 +38,6 @@
     }
     @include hover {
       border-color: var(--clr-highlight);
-    }
-    input {
-      appearance: none;
-      pointer-events: none;
-      position: absolute;
-      width: 0;
-      height: 0;
-      white-space: nowrap;
-    }
-    &:has(input[name='game-plan']:checked) {
-      border-color: var(--clr-highlight);
-      background-color: var(--magnolia);
     }
   }
   &__price {

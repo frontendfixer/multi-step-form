@@ -23,19 +23,6 @@ function UserPlans() {
     price: plan.price,
   });
 
-  const createUserPlan = elID => {
-    const planEl = document.getElementById(elID).closest('label');
-    const planName = planEl.querySelector('h3').textContent;
-    const planPrice = +planEl.querySelector('.price').textContent;
-
-    setUserPlan(previousValue => ({
-      ...previousValue,
-      id: elID,
-      name: planName,
-      price: planPrice,
-    }));
-  };
-
   const handelClickPrevious = () => {
     navigate('/');
     dispatch(previousStep());
@@ -55,12 +42,23 @@ function UserPlans() {
   };
 
   const handelRadio = e => {
-    createUserPlan(e.target.id);
+    const inputEl = document.getElementById(e.target.id);
+    const planEl = inputEl.labels[0];
+    const planName = planEl.querySelector('h3').textContent;
+    const planPrice = +planEl.querySelector('.price').textContent;
+
+    setUserPlan(previousValue => ({
+      ...previousValue,
+      id: e.target.id,
+      name: planName,
+      price: planPrice,
+    }));
   };
 
   useEffect(() => {
     dispatch(getStep(2));
-    document.getElementById(plan.id).checked = true;
+    const inputEl = document.getElementById(plan.id);
+    inputEl.checked = true;
   }, []);
   useEffect(() => {
     dispatch(setPlan(userPlan));
@@ -72,8 +70,8 @@ function UserPlans() {
         <h2>Select your plan</h2>
         <p>You have the option of monthly or yearly billing.</p>
         <div className={style.plan__cards} onChange={handelRadio}>
+          <input type="radio" name="game-plan" id="arcade" />
           <label htmlFor="arcade" className={style.plan__card}>
-            <input type="radio" name="game-plan" id="arcade" />
             <span>
               <ArcadeIcon />
             </span>
@@ -98,8 +96,8 @@ function UserPlans() {
               )}
             </div>
           </label>
+          <input type="radio" name="game-plan" id="advance" />
           <label htmlFor="advance" className={style.plan__card}>
-            <input type="radio" name="game-plan" id="advance" />
             <span>
               <AdvanceIcon />
             </span>
@@ -124,8 +122,8 @@ function UserPlans() {
               )}
             </div>
           </label>
+          <input type="radio" name="game-plan" id="pro" />
           <label htmlFor="pro" className={style.plan__card}>
-            <input type="radio" name="game-plan" id="pro" />
             <span>
               <ProIcon />
             </span>
