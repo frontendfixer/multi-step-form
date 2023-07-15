@@ -1,14 +1,14 @@
 @use '../../assets/scss/mixin' as *;
 
-.plans__details {
-  padding-block: 1.5rem;
-}
-
 .plan {
   &__cards {
+    padding-block-start: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
     gap: 1rem;
+    @include mq-min(medium) {
+      grid-template-columns: repeat(3, minmax(8rem, 1fr));
+    }
   }
   &__card {
     cursor: pointer;
@@ -16,35 +16,51 @@
     padding-block: 1rem;
     position: relative;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-    background-color: transparent;
-    border-radius: 1rem;
+    gap: 1rem;
+    border-radius: var(--border-radius);
     border: 1px solid var(--light_gray);
+    overflow: hidden;
+    @include mq-min(medium) {
+      flex-direction: column;
+      gap: 2.5rem;
+    }
     @include hover {
-      border-color: var(--marine);
+      border-color: var(--clr-highlight);
     }
     input {
+      appearance: none;
+      pointer-events: none;
       position: absolute;
       width: 0;
       height: 0;
       white-space: nowrap;
     }
     &:has(input[name='game-plan']:checked) {
+      border-color: var(--clr-highlight);
       background-color: var(--magnolia);
-    }
-
-    > span {
-      margin-block-end: 2rem;
     }
   }
   &__price {
     h3 {
       font-size: 1.125rem;
     }
-    span {
+    &__details {
       color: var(--cool_gray);
+      .free__months {
+        display: block;
+        font-size: 0.875rem;
+        color: var(--marine);
+        position: relative;
+        &::after {
+          content: '';
+          width: 12ch;
+          height: 4px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          background-color: rgba(0 0 0 /0.1);
+        }
+      }
     }
   }
   &__tenure {
@@ -86,6 +102,8 @@
     transition: all 350ms ease-in-out;
   }
   &__checkbox {
+    appearance: none;
+    pointer-events: none;
     position: absolute;
     width: 0;
     height: 0;
