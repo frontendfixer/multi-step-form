@@ -150,7 +150,7 @@ function UserPlans() {
           </label>
         </div>
         <div className={style.plan__tenure}>
-          <span data-tenure="active">Monthly</span>
+          <span data-tenure={!isYearly ? 'active' : 'inactive'}>Monthly</span>
           <label htmlFor="toggle-checkbox" className={style.toggle__button}>
             <input
               className={style.toggle__checkbox}
@@ -162,7 +162,7 @@ function UserPlans() {
             />
             <span className={style.toggle__ball} />
           </label>
-          <span>Yearly</span>
+          <span data-tenure={isYearly ? 'active' : 'inactive'}>Yearly</span>
         </div>
       </div>
       <div className="button__container">
