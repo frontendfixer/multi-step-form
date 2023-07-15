@@ -1,16 +1,14 @@
 .container {
-  width: 80%;
-  margin-inline: auto;
-  height: 100%;
-  display: grid;
-  place-content: center;
-  gap: 2rem;
+  padding-block-start: 8vw;
+  gap: 2.5rem;
 }
+
 .thankYou {
   &__icon {
     margin-inline: auto;
   }
   &__message {
+    text-align: center;
     h2 {
       font-size: var(--fs-700);
     }
