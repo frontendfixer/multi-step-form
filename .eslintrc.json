@@ -6,6 +6,16 @@
     "react/button-has-type": "off",
     "react/prop-types": "off",
     "jsx-a11y/label-has-associated-control": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "camelcase": [
+      "warn",
+      {
+        "ignoreDestructuring": true,
+        "ignoreImports": true,
+        "ignoreGlobals": true
+      }
+    ],
+    "no-param-reassign": ["warn", { "props": false }],
+    "import/no-extraneous-dependencies": "off"
   }
 }
