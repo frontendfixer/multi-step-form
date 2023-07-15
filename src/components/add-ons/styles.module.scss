@@ -23,7 +23,7 @@
     @include hover {
       border-color: var(--clr-highlight);
     }
-    &:has(input:checked) {
+    &[data-active='true'] {
       background-color: var(--magnolia);
     }
 

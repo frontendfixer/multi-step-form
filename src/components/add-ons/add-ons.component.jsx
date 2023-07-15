@@ -16,26 +16,21 @@ function AddOn() {
 
   const [userAddOns, setUserAddOns] = useState(addOns);
 
-  const addOnObject = {
-    id: '',
-    name: '',
-    price: '',
-  };
-
-  const createAddOnObject = inputID => {
-    const inputEl = document.getElementById(inputID);
-    const parentEl = inputEl.closest('label');
-    addOnObject.id = inputID;
-    addOnObject.name = parentEl.querySelector('h3').textContent;
-    addOnObject.price = +parentEl.querySelector('.price').textContent;
-  };
-
   const handelToggle = e => {
-    createAddOnObject(e.target.id);
+    const inputEl = document.getElementById(e.target.id);
+    const parentEl = inputEl.closest('label');
+    const addOnObject = {
+      id: e.target.id,
+      name: parentEl.querySelector('h3').textContent,
+      price: +parentEl.querySelector('.price').textContent,
+    };
+
     if (e.target.checked) {
+      parentEl.setAttribute('data-active', true);
       setUserAddOns(val => [...val, addOnObject]);
     }
     if (!e.target.checked) {
+      parentEl.removeAttribute('data-active');
       let addOnsArray = userAddOns;
       addOnsArray = addOnsArray.filter(el => el.name !== addOnObject.name);
       setUserAddOns(addOnsArray);
@@ -57,18 +52,20 @@ function AddOn() {
 
   useEffect(() => {
     dispatch(getStep(3));
-    const addOnsArray = userAddOns;
-    const newArray = [];
-    addOnsArray.forEach(el => {
+    let newArray = [];
+    userAddOns.forEach(el => {
       const inputEl = document.getElementById(el.id);
       inputEl.checked = true;
       const parentEl = inputEl.closest('label');
-      const addObject = {
-        id: el.id,
-        name: parentEl.querySelector('h3').textContent,
-        price: +parentEl.querySelector('.price').textContent,
-      };
-      newArray.push(addObject);
+      parentEl.setAttribute('data-active', true);
+      newArray = [
+        ...newArray,
+        {
+          id: el.id,
+          name: parentEl.querySelector('h3').textContent,
+          price: +parentEl.querySelector('.price').textContent,
+        },
+      ];
     });
     setUserAddOns(newArray);
   }, []);
