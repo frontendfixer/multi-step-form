@@ -43,13 +43,16 @@
 }
 
 .button__container {
-  padding-inline: 1rem;
+  padding-inline: calc(5% + 1rem);
   padding-block: 1rem;
   background-color: var(--white);
   display: flex;
 
   button:last-child {
     margin-inline-start: auto;
+  }
+  @include mq-min(small) {
+    padding-inline: 5%;
   }
 }
 
