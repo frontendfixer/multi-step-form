@@ -1,7 +1,13 @@
 import style from './style.module.scss';
 
+export const BUTTON_TYPE = {
+  NEXT: 'next',
+  PREVIOUS: 'previous',
+  SUBMIT: 'submit',
+};
+
 function Button({ children, buttonType, ...otherProps }) {
-  if (buttonType && buttonType === 'inverted')
+  if (buttonType && buttonType === BUTTON_TYPE.PREVIOUS)
     return (
       <button
         {...otherProps}
@@ -10,7 +16,7 @@ function Button({ children, buttonType, ...otherProps }) {
         {children}
       </button>
     );
-  if (buttonType && buttonType === 'confirm')
+  if (buttonType && buttonType === BUTTON_TYPE.SUBMIT)
     return (
       <button
         {...otherProps}
@@ -19,6 +25,13 @@ function Button({ children, buttonType, ...otherProps }) {
         {children}
       </button>
     );
+  if (buttonType && buttonType === BUTTON_TYPE.NEXT)
+    return (
+      <button {...otherProps} className={style.button}>
+        {children}
+      </button>
+    );
+
   return (
     <button {...otherProps} className={style.button}>
       {children}

@@ -5,7 +5,7 @@
   appearance: none;
   border: none;
   outline: none;
-  padding-block: 0.875rem;
+  padding-block: 0.75rem;
   padding-inline: 1.5rem;
   font: inherit;
   background-color: var(--marine);
@@ -13,7 +13,7 @@
   font-weight: var(--fw-700);
   display: flex;
   justify-content: center;
-  border-radius: 0.5rem;
+  border-radius: rem(6px);
   transition: filter 250ms;
   @include hover {
     filter: opacity(0.8);
@@ -22,7 +22,7 @@
   &.inverted {
     background-color: transparent;
     color: var(--marine);
-    opacity: 0.5;
+    opacity: 0.8;
     transition: opacity 250ms;
     @include hover {
       opacity: 1;
