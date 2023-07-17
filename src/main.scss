@@ -1,8 +1,6 @@
 @use './assets/scss/mixin' as *;
 @forward './assets/scss/reset';
 
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
-
 :root {
   --ff-primary: 'Ubuntu', sans-serif;
   --fs-base: 1rem;
