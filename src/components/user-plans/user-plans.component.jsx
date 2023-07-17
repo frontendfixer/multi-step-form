@@ -73,7 +73,7 @@ function UserPlans() {
           <input type="radio" name="game-plan" id="arcade" />
           <label htmlFor="arcade" className={style.plan__card}>
             <span>
-              <ArcadeIcon />
+              <ArcadeIcon alt="" aria-hidden />
             </span>
             <div className={style.plan__price}>
               <h3>Arcade</h3>
@@ -99,7 +99,7 @@ function UserPlans() {
           <input type="radio" name="game-plan" id="advance" />
           <label htmlFor="advance" className={style.plan__card}>
             <span>
-              <AdvanceIcon />
+              <AdvanceIcon alt="" aria-hidden />
             </span>
             <div className={style.plan__price}>
               <h3>Advanced</h3>
@@ -125,7 +125,7 @@ function UserPlans() {
           <input type="radio" name="game-plan" id="pro" />
           <label htmlFor="pro" className={style.plan__card}>
             <span>
-              <ProIcon />
+              <ProIcon alt="" aria-hidden />
             </span>
             <div className={style.plan__price}>
               <h3>Pro</h3>

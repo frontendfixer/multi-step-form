@@ -18,7 +18,7 @@ function ThanksCard() {
   return (
     <form className="form-wrapper">
       <div className={`form__body__container ${style.container}`}>
-        <ThanksIcon className={style.thankYou__icon} />
+        <ThanksIcon className={style.thankYou__icon} alt="" aria-hidden />
         <div className={style.thankYou__message}>
           <h2>Thank you!</h2>
           <p>
