@@ -5,16 +5,16 @@ import style from './styles.module.scss';
 
 function FormLayout() {
   return (
-    <div className={style.form__container}>
-      <div className={style.form__nav}>
+    <main className={style.form__container}>
+      <nav className={style.form__nav}>
         <div className={style.nav__container}>
           <FormNav />
         </div>
-      </div>
-      <div className={style.form__body}>
+      </nav>
+      <section className={style.form__body}>
         <Outlet />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 }
 
